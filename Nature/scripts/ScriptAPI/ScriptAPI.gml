@@ -1,6 +1,5 @@
 function tree_fall(tree_id,should_fall_left) {
-	if (!instance_exists(tree_id)) return;
-	if (tree_id.object_index != Obj_Tree) return;
+	if (!instance_exists(tree_id) or tree_id.object_index != Obj_Tree or tree_id.in_sequence) return;
 	
 	var seq = should_fall_left ? Seq_Tree_Fall_Left : Seq_Tree_Fall_Right;
 	var seq_element = layer_sequence_create("Instances",tree_id.x,tree_id.y,seq);

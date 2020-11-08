@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Spr_Tree_Blocks",
-    "path": "sprites/Spr_Tree_Blocks/Spr_Tree_Blocks.yy",
+    "name": "Spr_Tree_Default",
+    "path": "sprites/Spr_Tree_Default/Spr_Tree_Default.yy",
   },
   "solid": false,
   "visible": true,
@@ -22,15 +22,13 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"Obj_Tree","path":"objects/Obj_Tree/Obj_Tree.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":37,"eventType":9,"collisionObjectId":null,"parent":{"name":"Obj_Tree","path":"objects/Obj_Tree/Obj_Tree.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":76,"eventType":7,"collisionObjectId":null,"parent":{"name":"Obj_Tree","path":"objects/Obj_Tree/Obj_Tree.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":39,"eventType":9,"collisionObjectId":null,"parent":{"name":"Obj_Tree","path":"objects/Obj_Tree/Obj_Tree.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Trees",
+    "path": "folders/Objects/Trees.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_Tree",
