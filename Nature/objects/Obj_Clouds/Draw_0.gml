@@ -1,0 +1,1 @@
+draw(0,floor(layer_count/2));

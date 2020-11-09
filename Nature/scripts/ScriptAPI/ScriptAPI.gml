@@ -6,3 +6,9 @@ function tree_fall(tree_id,should_fall_left) {
 	var seq_inst = layer_sequence_get_instance(seq_element);
 	sequence_instance_override_object(seq_inst,Obj_Tree,tree_id);
 }
+
+function move_instance(inst_id,x,y) {
+	if (!instance_exists(inst_id)) return;
+	inst_id.x = x;
+	inst_id.y = y;
+}

@@ -1,4 +1,3 @@
-image_speed = 0;
 sprite_index = choose(
 	Spr_Tree_Blocks,
 	Spr_Tree_Cone,
@@ -12,5 +11,7 @@ sprite_index = choose(
 	Spr_Tree_Tall,
 	Spr_Tree_Thin
 );
-
 image_index = choose(0,1);
+image_speed = 0;
+image_xscale = 4;
+image_yscale = 4;
