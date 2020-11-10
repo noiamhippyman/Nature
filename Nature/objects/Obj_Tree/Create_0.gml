@@ -13,5 +13,5 @@ sprite_index = choose(
 );
 image_index = choose(0,1);
 image_speed = 0;
-image_xscale = 4;
-image_yscale = 4;
+//image_xscale = 4;
+//image_yscale = 4;

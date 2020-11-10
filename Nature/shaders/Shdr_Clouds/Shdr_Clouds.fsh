@@ -8,7 +8,7 @@ uniform float u_width;
 uniform float u_height;
 uniform float u_scale;
 uniform float u_time;
-uniform float u_offset;
+uniform vec2 u_offset;
 
 #define PI 3.14159265358979323846
 
@@ -203,11 +203,13 @@ float snoise(vec3 v){
 
 void main()
 {
-	vec3 noise_vec = vec3(vec2(gl_FragCoord.x + u_time, gl_FragCoord.y)/vec2(u_width,u_height)*u_scale,u_time * 12.0);
-	vec3 time_vec = vec3(u_time * 10.0,0,0);
-	vec3 view_vec = vec3(u_offset / u_width * 6.0,0.0,0.0);
-	float v = snoise(noise_vec + time_vec + view_vec);
-	if (v < 0.3) discard;
+	vec3 noise_vec = vec3(gl_FragCoord.xy/vec2(u_width,u_height)*u_scale,u_time * 1.0);
+	vec3 time_vec = vec3(u_time * 10.0,0.0,u_offset.y);
+	vec3 view_vec = vec3(u_offset.x / u_width * 5.0,0.0,0.0);
+	//float v = snoise(noise_vec + time_vec + view_vec);
+	float v = cnoise(noise_vec + time_vec + view_vec);
+	if (v < 0.1) discard;
 	float a = gl_FragCoord.y / u_height * 2.0;
-	gl_FragColor = vec4(v,v,v,1.0 - a);
+	//float v2 = v * 4.0;
+	gl_FragColor = vec4(1.0,1.0,1.0,v * (1.0 - a));
 }

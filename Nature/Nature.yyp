@@ -10,6 +10,7 @@
     {"id":{"name":"Spr_Person","path":"sprites/Spr_Person/Spr_Person.yy",},"order":2,},
     {"id":{"name":"State","path":"scripts/State/State.yy",},"order":2,},
     {"id":{"name":"Seq_Tree_Fall_Left","path":"sequences/Seq_Tree_Fall_Left/Seq_Tree_Fall_Left.yy",},"order":0,},
+    {"id":{"name":"Spr_Person17","path":"sprites/Spr_Person17/Spr_Person17.yy",},"order":7,},
     {"id":{"name":"StateMachine","path":"scripts/StateMachine/StateMachine.yy",},"order":3,},
     {"id":{"name":"Spr_SkyGradient","path":"sprites/Spr_SkyGradient/Spr_SkyGradient.yy",},"order":5,},
     {"id":{"name":"Obj_TreeCutter","path":"objects/Obj_TreeCutter/Obj_TreeCutter.yy",},"order":1,},

@@ -14,14 +14,14 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 12,
-  "height": 54,
+  "width": 40,
+  "height": 179,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
   },
   "swatchColours": null,
-  "gridX": 6,
+  "gridX": 5,
   "gridY": 10,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"2c1c1411-a377-4148-b807-3f2fa5c79b28","path":"sprites/Spr_Person/Spr_Person.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
@@ -54,8 +54,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 6,
-    "yorigin": 54,
+    "xorigin": 20,
+    "yorigin": 179,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"Spr_Person","path":"sprites/Spr_Person/Spr_Person.yy",},
