@@ -13,9 +13,14 @@ u_gradient_height = shader_get_uniform(shader,"u_height");
 u_sky_color = shader_get_uniform(shader,"u_sky_color");
 u_mid_color = shader_get_uniform(shader,"u_mid_color");
 u_horizon_color = shader_get_uniform(shader,"u_horizon_color");
+u_stop_offset = shader_get_uniform(shader,"u_stop_offset");
 
 sky_color = [
-	[0.24,0.32,0.588],
-	[0.2,0.6,0.70],
-	[0.76,1,1]
+	[0.286,0.647,0.749],
+	[0.576,0.807,0.870],
+	[0.694,0.831,0.866]
+];
+
+stop_offset = [
+	0.2,0.7,0.92
 ];

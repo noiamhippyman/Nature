@@ -1,0 +1,1 @@
+You should test out empty objects that use sequences holding sprite animations. No overriding objects/instances. Maybe positioning will be relative then?

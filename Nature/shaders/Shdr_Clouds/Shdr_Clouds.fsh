@@ -26,8 +26,9 @@ vec3 fade(vec3 t) {return t*t*t*(t*(t*6.0-15.0)+10.0);}
 float cnoise(vec3 P){
   vec3 Pi0 = floor(P); // Integer part for indexing
   vec3 Pi1 = Pi0 + vec3(1.0); // Integer part + 1
-  Pi0 = mod(Pi0, 289.0);
-  Pi1 = mod(Pi1, 289.0);
+  float magicV = 289.0;
+  Pi0 = mod(Pi0, magicV);
+  Pi1 = mod(Pi1, magicV);
   vec3 Pf0 = fract(P); // Fractional part for interpolation
   vec3 Pf1 = Pf0 - vec3(1.0); // Fractional part - 1.0
   vec4 ix = vec4(Pi0.x, Pi1.x, Pi0.x, Pi1.x);
@@ -39,21 +40,23 @@ float cnoise(vec3 P){
   vec4 ixy0 = permute(ixy + iz0);
   vec4 ixy1 = permute(ixy + iz1);
 
-  vec4 gx0 = ixy0 / 7.0;
-  vec4 gy0 = fract(floor(gx0) / 7.0) - 0.5;
+  float magicV2 = 7.0;
+  float magicV3 = 0.5;
+  vec4 gx0 = ixy0 / magicV2;
+  vec4 gy0 = fract(floor(gx0) / magicV2) - magicV3;
   gx0 = fract(gx0);
-  vec4 gz0 = vec4(0.5) - abs(gx0) - abs(gy0);
+  vec4 gz0 = vec4(magicV3) - abs(gx0) - abs(gy0);
   vec4 sz0 = step(gz0, vec4(0.0));
-  gx0 -= sz0 * (step(0.0, gx0) - 0.5);
-  gy0 -= sz0 * (step(0.0, gy0) - 0.5);
+  gx0 -= sz0 * (step(0.0, gx0) - magicV3);
+  gy0 -= sz0 * (step(0.0, gy0) - magicV3);
 
-  vec4 gx1 = ixy1 / 7.0;
-  vec4 gy1 = fract(floor(gx1) / 7.0) - 0.5;
+  vec4 gx1 = ixy1 / magicV2;
+  vec4 gy1 = fract(floor(gx1) / magicV2) - magicV3;
   gx1 = fract(gx1);
-  vec4 gz1 = vec4(0.5) - abs(gx1) - abs(gy1);
+  vec4 gz1 = vec4(magicV3) - abs(gx1) - abs(gy1);
   vec4 sz1 = step(gz1, vec4(0.0));
-  gx1 -= sz1 * (step(0.0, gx1) - 0.5);
-  gy1 -= sz1 * (step(0.0, gy1) - 0.5);
+  gx1 -= sz1 * (step(0.0, gx1) - magicV3);
+  gy1 -= sz1 * (step(0.0, gy1) - magicV3);
 
   vec3 g000 = vec3(gx0.x,gy0.x,gz0.x);
   vec3 g100 = vec3(gx0.y,gy0.y,gz0.y);
@@ -97,8 +100,22 @@ void main()
 	vec3 noise_vec = vec3(unit_vec*u_scale,u_time);
 	vec3 time_vec = vec3(u_time * 10.0,0.0,u_offset.y);
 	vec3 view_vec = vec3(u_offset.x / u_width * 5.0,0.0,0.0);
-	float v = cnoise(noise_vec + time_vec + view_vec);
-	if (v < 0.1) discard;
-	float a = gl_FragCoord.y / u_height * 2.0;
-	gl_FragColor = vec4(1.0,1.0,1.0,v * (1.0 - a));
+	float v1 = cnoise(noise_vec + time_vec + view_vec);
+	
+	float mix_scale = 3.0;
+	noise_vec = vec3(unit_vec*u_scale*mix_scale,u_time);
+	view_vec = vec3(u_offset.x / u_width * 5.0 * mix_scale,0.0,0.0);
+	float v2 = cnoise(noise_vec + time_vec + view_vec);
+	
+	mix_scale = 8.0;
+	noise_vec = vec3(unit_vec*u_scale*mix_scale,u_time);
+	view_vec = vec3(u_offset.x / u_width * 5.0 * mix_scale,0.0,0.0);
+	float v3 = cnoise(noise_vec + time_vec + view_vec);
+	
+	float v = mix(v2,v3,0.5);
+	v = mix(v,v1,0.8);
+	//if (v < 0.1) discard;
+	if (unit_vec.y > 0.5) discard;
+	float a = unit_vec.y * 2.0;
+	gl_FragColor = vec4(vec3(1.0),v*(1.0 - a));
 }

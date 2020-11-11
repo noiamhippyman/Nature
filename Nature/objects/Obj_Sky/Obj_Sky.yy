@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Spr_Clouds",
-    "path": "sprites/Spr_Clouds/Spr_Clouds.yy",
+    "name": "Spr_Sky",
+    "path": "sprites/Spr_Sky/Spr_Sky.yy",
   },
   "solid": false,
   "visible": true,
@@ -21,8 +21,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"Obj_Clouds","path":"objects/Obj_Clouds/Obj_Clouds.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"Obj_Clouds","path":"objects/Obj_Clouds/Obj_Clouds.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"Obj_Sky","path":"objects/Obj_Sky/Obj_Sky.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"Obj_Sky","path":"objects/Obj_Sky/Obj_Sky.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -31,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Obj_Clouds",
+  "name": "Obj_Sky",
   "tags": [],
   "resourceType": "GMObject",
 }

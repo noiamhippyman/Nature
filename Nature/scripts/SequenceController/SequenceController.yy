@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Core.yy",
   },
   "resourceVersion": "1.0",
-  "name": "StateMachine",
+  "name": "SequenceController",
   "tags": [],
   "resourceType": "GMScript",
 }

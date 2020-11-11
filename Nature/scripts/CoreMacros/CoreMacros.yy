@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Core",
-    "path": "folders/Core.yy",
+    "path": "folders/Scripts/Core.yy",
   },
   "resourceVersion": "1.0",
   "name": "CoreMacros",

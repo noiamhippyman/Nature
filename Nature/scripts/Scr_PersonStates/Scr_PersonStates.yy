@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Core",
-    "path": "folders/Scripts/Core.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "StateMachine",
+  "name": "Scr_PersonStates",
   "tags": [],
   "resourceType": "GMScript",
 }

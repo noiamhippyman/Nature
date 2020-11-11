@@ -15,6 +15,7 @@ shader_set_uniform_f(u_gradient_height,view_height);
 shader_set_uniform_f_array(u_sky_color,sky_color[0]);
 shader_set_uniform_f_array(u_mid_color,sky_color[1]);
 shader_set_uniform_f_array(u_horizon_color,sky_color[2]);
+shader_set_uniform_f_array(u_stop_offset,stop_offset);
 draw_rectangle(x1,y1,x2,y2,false);
 shader_reset();
 
