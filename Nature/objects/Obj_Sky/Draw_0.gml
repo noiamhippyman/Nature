@@ -26,7 +26,8 @@ shader_set_uniform_f(u_scale,8);
 var t = current_time / 100000;
 for(var i = 0; i < layer_count; ++i) {
 	shader_set_uniform_f(u_time,t);
-	shader_set_uniform_f(u_offset,cx + i * 500, i * 500);
+	var v = i * 500;
+	shader_set_uniform_f(u_offset,cx + v, v);
 	draw_rectangle(x1,y1,x2,y2,false);
 }
 shader_reset();

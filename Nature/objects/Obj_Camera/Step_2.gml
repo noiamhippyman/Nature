@@ -11,7 +11,9 @@ if (instance_exists(target)) {
 		var cx = camera_get_view_x(cam) + xaxis * spd * dt;
 		camera_set_view_pos(cam,cx,0);
 	}
-	
+}
+
+if (edge_scrolling) {
 	var wmx = window_mouse_get_x();
 	var vw = camera_get_view_width(cam);
 	var pad = 32;

@@ -1,4 +1,4 @@
-layer_count = 10;
+layer_count = 15;
 
 var shader = Shdr_Clouds;
 u_clouds_width = shader_get_uniform(shader,"u_width");

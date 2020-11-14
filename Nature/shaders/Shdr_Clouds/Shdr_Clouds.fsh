@@ -10,12 +10,6 @@ uniform float u_scale;
 uniform float u_time;
 uniform vec2 u_offset;
 
-//#define PI 3.14159265358979323846
-
-//float rand(vec2 c){
-//	return fract(sin(dot(c.xy ,vec2(12.9898,78.233))) * 43758.5453);
-//}
-
 //	Classic Perlin 3D Noise 
 //	by Stefan Gustavson
 //
@@ -114,8 +108,7 @@ void main()
 	
 	float v = mix(v2,v3,0.5);
 	v = mix(v,v1,0.8);
-	//if (v < 0.1) discard;
-	if (unit_vec.y > 0.5) discard;
+	if (unit_vec.y > 0.5 || v < 0.05) discard;
 	float a = unit_vec.y * 2.0;
 	gl_FragColor = vec4(vec3(1.0),v*(1.0 - a));
 }
