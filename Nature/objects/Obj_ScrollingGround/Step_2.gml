@@ -1,10 +1,10 @@
-var cam = view_get_camera(0);
-var cx = camera_get_view_x(cam);
-var cw = camera_get_view_width(cam);
+//var cam = view_get_camera(0);
+//var cx = camera_get_view_x(cam);
+//var cw = camera_get_view_width(cam);
 
-x = cx;
+////x = cx;
 
-tex_offset[0] = ((cx mod cw) / cw) * 0.5;
+//tex_offset[0] = (cx / cw);
 //var tex = sprite_get_texture(sprite_index,image_index);
 //var spr_uv = texture_get_uvs(tex);
 

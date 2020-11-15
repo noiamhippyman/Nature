@@ -1,0 +1,1 @@
+sky_gradient = new SkyGradientSurface(room_width,room_height);
