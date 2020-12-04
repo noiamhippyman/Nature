@@ -5,6 +5,7 @@ varying vec2 v_vTexcoord;
 varying vec4 v_vColor;
 uniform vec2 u_vResolution;
 uniform float u_fViewOffsetX;
+uniform float u_fFloorY;
 //uniform float u_fTime;
 
 
@@ -86,7 +87,7 @@ float cnoise(vec3 P) {
 	return 2.2 * n_xyz;
 }
 
-const float SCALE = 2.0;
+const float SCALE = 16.0;
 
 void main() {
 	//float seconds = u_fTime * 0.000015;
@@ -95,12 +96,34 @@ void main() {
 	
 	float scale = SCALE;
 	vec3 noise_vec = vec3(unit_vec * scale, 0.0);
-	//vec3 time_vec = vec3(seconds * scale, 0.0, 0.0);
 	vec3 view_vec = vec3(offset * scale, 0.0, 0.0);
-	//float v1 = cnoise(noise_vec + time_vec + view_vec);
+	float v1 = cnoise(noise_vec + view_vec);
 	
-	float v = cnoise(noise_vec + view_vec);
+	scale = SCALE * 4.0;
+	noise_vec = vec3(unit_vec * scale, 0.0);
+	view_vec = vec3(offset * scale, 0.0, 0.0);
+	float v2 = cnoise(noise_vec + view_vec);
 	
-	if (unit_vec.y < 0.65 || v < 0.01) discard;
-	gl_FragColor = vec4(1.0,0.5,0.2,1.0);
+	scale = SCALE * 16.0;
+	noise_vec = vec3(unit_vec * scale, 0.0);
+	view_vec = vec3(offset * scale, 0.0, 0.0);
+	float v3 = cnoise(noise_vec + view_vec);
+	
+	float v = mix(v3,v2,0.5);
+	v = mix(v,v1,0.5);
+	//float v = cnoise(noise_vec + view_vec);
+	
+	float discardY = u_fFloorY / u_vResolution.y;
+	float grass_width = 32.0 / u_vResolution.y;
+	
+	if (unit_vec.y < discardY) discard;
+	if (unit_vec.y > discardY && unit_vec.y < discardY + grass_width) {
+		gl_FragColor = vec4(0.5,0.8,0.3,1.0);
+	} else {
+		if (v < 0.3) {
+			gl_FragColor = vec4(1.0,0.5,0.2,1.0);
+		} else {
+			gl_FragColor = vec4(0.5,0.5,0.5,1.0);
+		}
+	}
 }

@@ -3,7 +3,7 @@ if (instance_exists(target)) {
 	var cx = target.x - camera_get_view_width(cam) / 2;
 	camera_set_view_pos(cam,cx,0);
 } else {
-	var spd = 100;
+	var spd = 1000;
 	var dt = delta_time / 1000000;
 	var xaxis = key_to_axis(vk_right,vk_left);
 	

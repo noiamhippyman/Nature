@@ -43,3 +43,6 @@ function SkyGradientSurface(width,height) : SurfaceBuffer(width,height) construc
 	update_sky(width,height);
 }
 
+function sky_gradient_surface_create(width,height) {
+	return new SkyGradientSurface(width,height);
+}

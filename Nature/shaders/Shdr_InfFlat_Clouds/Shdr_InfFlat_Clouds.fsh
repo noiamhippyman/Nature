@@ -7,6 +7,7 @@ uniform vec2 u_vResolution;
 uniform float u_fTime;
 uniform float u_fScale;
 uniform float u_fViewOffsetX;
+uniform float u_fDensity;
 
 //	Classic Perlin 3D Noise 
 //	by Stefan Gustavson
@@ -90,25 +91,25 @@ const float SCALE = 12.0;
 
 void main() {
 	float seconds = u_fTime * 0.000015;
-	vec2 unit_vec = gl_FragCoord.xy / u_vResolution;
+	vec2 uv = gl_FragCoord.xy / u_vResolution;
 	float offset = u_fViewOffsetX / u_vResolution.x;
 	
 	float scale = SCALE;
-	vec3 noise_vec = vec3(unit_vec * u_fScale * scale, u_fTime * 0.00001);
+	vec3 noise_vec = vec3(uv * u_fScale * scale, u_fTime * 0.00001);
 	vec3 time_vec = vec3(seconds * scale, 0.0, 0.0);
 	vec3 view_vec = vec3(offset * scale, 0.0, 0.0);
 	noise_vec.y += 100.0;
 	float v1 = cnoise(noise_vec + time_vec + view_vec);
 	
 	scale = SCALE * 3.0;
-	noise_vec = vec3(unit_vec * u_fScale * scale, u_fTime * 0.000015);
+	noise_vec = vec3(uv * u_fScale * scale, u_fTime * 0.000015);
 	time_vec = vec3(seconds * scale, 0.0, 0.0);
 	view_vec = vec3(offset * scale, 0.0, 0.0);
 	noise_vec.y += 200.0;
 	float v2 = cnoise(noise_vec + time_vec + view_vec);
 	
 	scale = SCALE * 8.0;
-	noise_vec = vec3(unit_vec * u_fScale * scale, u_fTime * 0.00002);
+	noise_vec = vec3(uv * u_fScale * scale, u_fTime * 0.00002);
 	time_vec = vec3(seconds * scale, 0.0, 0.0);
 	view_vec = vec3(offset * scale, 0.0, 0.0);
 	noise_vec.y += 300.0;
@@ -117,7 +118,7 @@ void main() {
 	float v = mix(v2,v3,0.5);
 	v = mix(v,v1,0.8);
 	
-	if (unit_vec.y > 0.5 || v < 0.01) discard;
-	float a = unit_vec.y * 2.0;
+	if (uv.y > 0.5 || v < (0.05)) discard;
+	float a = uv.y * 2.0;
 	gl_FragColor = vec4(vec3(1.0),v * (1.0 - a) * 1.5);
 }

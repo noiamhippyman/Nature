@@ -1,0 +1,1 @@
+surface_buffer_free(sky_gradient);
