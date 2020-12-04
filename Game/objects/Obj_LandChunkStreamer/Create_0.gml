@@ -6,8 +6,8 @@ chunk_map_range = {
 	last: 0
 };
 
-chunk_width = 256;
-chunk_height = 32;
+chunk_width = sprite_get_width(Spr_LandChunk);
+chunk_height = sprite_get_height(Spr_LandChunk);
 
 get_camera_chunk_range = function() {
 	var c = view_get_camera(0);
@@ -35,8 +35,6 @@ generate_chunk = function(chunk_x) {
 	// generate chunk instance
 	var key = string(chunk_x);
 	var chunk_inst = instance_create_layer(chunk_x * chunk_width,room_height - chunk_height,"Instances",Obj_LandChunk);
-	chunk_inst.width = chunk_width;
-	chunk_inst.height = chunk_height;
 	chunk_map[? key ] = chunk_inst;
 	
 }

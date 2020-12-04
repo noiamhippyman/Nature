@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Spr_LandChunk",
-    "path": "sprites/Spr_LandChunk/Spr_LandChunk.yy",
+    "name": "Spr_Tree",
+    "path": "sprites/Spr_Tree/Spr_Tree.yy",
   },
   "solid": false,
   "visible": true,
@@ -21,8 +21,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"Obj_LandChunk","path":"objects/Obj_LandChunk/Obj_LandChunk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":73,"eventType":8,"collisionObjectId":null,"parent":{"name":"Obj_LandChunk","path":"objects/Obj_LandChunk/Obj_LandChunk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"Obj_Tree","path":"objects/Obj_Tree/Obj_Tree.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -31,7 +30,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Obj_LandChunk",
+  "name": "Obj_Tree",
   "tags": [],
   "resourceType": "GMObject",
 }

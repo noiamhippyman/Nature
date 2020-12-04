@@ -9,6 +9,8 @@
     {"id":{"name":"Obj_LandChunk","path":"objects/Obj_LandChunk/Obj_LandChunk.yy",},"order":2,},
     {"id":{"name":"Spr_LandTile","path":"sprites/Spr_LandTile/Spr_LandTile.yy",},"order":1,},
     {"id":{"name":"CoreMacros","path":"scripts/CoreMacros/CoreMacros.yy",},"order":1,},
+    {"id":{"name":"Obj_Tree","path":"objects/Obj_Tree/Obj_Tree.yy",},"order":3,},
+    {"id":{"name":"Spr_Tree","path":"sprites/Spr_Tree/Spr_Tree.yy",},"order":3,},
     {"id":{"name":"CoreGeneralFunctions","path":"scripts/CoreGeneralFunctions/CoreGeneralFunctions.yy",},"order":0,},
     {"id":{"name":"Obj_ScrollingLand","path":"objects/Obj_ScrollingLand/Obj_ScrollingLand.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":1,},
